@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Кнопка</title>
+</head>
+<body>
+
+<div>
+    <h1>Переход по ссылке (кнопке)</h1>
+    <a href="{{ url_for('hello') }}">Нажать</a>
+</div>
+
+<div>
+    <h1>Загружаем новый файл на сервер</h1>
+    <form method=post enctype=multipart/form-data>
+        <input type=file name=file>
+        <input type=submit value=Загрузить>
+    </form>
+</div>
+
+<div>
+    <h1>Аутентификация по логину и паролю</h1>
+    <form action="/login" method="post">
+        <input type="text" name="login" placeholder="login">
+        <input type="text" name="password" placeholder="password">
+        <input type="submit" value="Отправить">
+    </form>
+</div>
+
+<div>
+    <h1>Получаем текст и считаем количество слов</h1>
+    <form action="/text_input" method="post">
+        <textarea name="text" cols="30" rows="10" placeholder="input text"></textarea>
+        <input type="submit" value="Отправить">
+    </form>
+</div>
+
+<div>
+    <h1>Калькулятор</h1>
+    <form action="/calculator" method="post">
+        <input type="number" name="num1" placeholder="number 1">
+        <input type="number" name="num2" placeholder="number 2">
+        <select name="operation" id="operation">
+            <option value="add">+</option>
+            <option value="subtract">-</option>
+            <option value="multiply">*</option>
+            <option value="divide">/</option>
+        </select>
+        <input type="submit" value="Вычислить">
+    </form>
+</div>
+
+<div>
+    <h1>Проверяем возраст и выводим ошибку</h1>
+    <form action="/check_age" method="post">
+        <input type="text" name="name" placeholder="Name">
+        <input type="number" name="num" placeholder="Age">
+        <button type="submit">Проверить возраст</button>
+    </form>
+</div>
+
+<div>
+    <h1>Выводим flash-сообщения над полем формы</h1>
+    <form action="/flash_name" method="post">
+        {% with messages = get_flashed_messages(with_categories=true)
+        %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <div>
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <input type="text" name="name" placeholder="Name">
+        <button type="submit">Отправить</button>
+    </form>
+</div>
+
+
+</body>
+</html>
