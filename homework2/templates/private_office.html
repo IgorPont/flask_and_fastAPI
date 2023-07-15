@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Личный кабинет</title>
+</head>
+<body>
+<div>
+    <h3>Привет, {{ session["username"] }}!</h3>
+    <h4>Твоя электронная почта - {{ session['email'] }}</h4>
+    <form action="/logout">
+        <input type="submit" value="Выйти">
+    </form>
+</div>
+
+</body>
+</html>
