@@ -19,13 +19,13 @@
                 <a class="navbar-brand" href="#">КРУТОЙ БРЕНД</a>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Одежда</a>
+                        <a class="nav-link active" aria-current="page" href="{{ url_for('clothes') }}">Одежда</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Обувь</a>
+                        <a class="nav-link" href="{{ url_for('shoes') }}">Обувь</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled">Куртка</a>
+                        <a class="nav-link" href="{{ url_for('jacket') }}">Куртка</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
