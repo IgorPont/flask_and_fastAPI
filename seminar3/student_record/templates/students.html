@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+</head>
+<body>
+
+<div>
+    <h1>Список студентов</h1>
+</div>
+
+<div>
+    <table class="table table-striped">
+        <thead class="table-dark">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Имя</th>
+            <th scope="col">Фамилия</th>
+            <th scope="col">Возраст</th>
+            <th scope="col">Пол</th>
+            <th scope="col">Группа</th>
+            <th scope="col">Факультет</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for student in students %}
+        <tr>
+            <th>{{ student.id }}</th>
+            <td>{{ student.firstname }}</td>
+            <td>{{ student.lastname }}</td>
+            <td>{{ student.age }}</td>
+            <td>{{ student.gender }}</td>
+            <td>{{ student.group }}</td>
+            <th>{{ student.faculty.name }}</th>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

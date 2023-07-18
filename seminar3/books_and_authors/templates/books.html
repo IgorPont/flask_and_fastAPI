@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+</head>
+<body>
+
+{% block content %}
+<div>
+    <h1>Книги и авторы</h1>
+</div>
+
+<div>
+    {% for book in books %}
+    <h3>{{ book.title }}</h3>
+    {% for author in book.authors %}
+    <p>{{ author }}</p>
+    {% endfor %}
+    {% endfor %}
+</div>
+{% endblock %}
+
+</body>
+</html>
