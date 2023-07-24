@@ -51,9 +51,12 @@ def registration():
         new_user = User(
             username=username,
             email=email,
-            # хешируем пароль
-            password=generate_password_hash('password'),
+            # хешируем пароль (но лучше через модели)
+            # password=generate_password_hash('password'),
+            password=password,
         )
+        new_user.set_password(password)
+
         db.session.add(new_user)
         db.session.commit()
 
